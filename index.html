@@ -14,8 +14,9 @@
     <img src="./logos/whiteLogo.png" style="height:6vw;"></img>
     <p class="title">Enter Address: </p>
     <input id="myInput" type="text" class="regInput"></input>
-    <button id="myBtn" class="button" type="button" onclick="alert('gang gang it was clicked')">Enter</button>
+    <button id="myBtn" class="button" type="button" onclick="addLoc()">Enter</button>
     <script>
+    var locations = [];
     var input = document.getElementById("myInput");
     input.addEventListener("keyup", function(event) {
         event.preventDefault();
@@ -23,10 +24,18 @@
             document.getElementById("myBtn").click();
         }
     });
+
+    function addLoc(){
+      var location = document.getElementById("myInput").value;
+      locations.push(location);
+      document.getElementById("addresses").innerHTML = locations;
+      document.getElementById("myInput").value = '';
+      console.log(locations);
+    }
     </script>
   </div>
   <div class="values">
-    <div class="ex1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum dolor quis odio vehicula placerat. Mauris varius, dolor quis viverra semper, felis nunc sollicitudin mi, eget gravida orci turpis eget dolor. Ut nec ultricies lorem. Phasellus dictum consectetur magna, molestie elementum ex. Nam imperdiet nulla elit, a euismod orci sodales quis. In ipsum velit, aliquet vitae lobortis id, tincidunt vel diam. Morbi euismod sodales sem, id laoreet ligula venenatis fringilla. Aliquam vitae ligula sit amet ipsum imperdiet bibendum non sit amet nibh. Cras aliquet velit ut mi faucibus, id cursus sapien lobortis. Pellentesque ut felis tellus. Mauris non laoreet nisi. Nam tincidunt et mi sed rhoncus. In hac habitasse platea dictumst. Integer non venenatis metus. Curabitur ullamcorper pellentesque sem, vitae placerat leo ultrices eget. Pellentesque semper laoreet lectus ut suscipit.</div>
+    <div class="ex1" id="addresses"></div>
   </div>
 </div>
 <div class="map" >
@@ -34,8 +43,10 @@
     <script>
       function initMap() {
         var uluru = {lat: 39.018304, lng: -77.011656};
+        var secor = {lat: 39.055340, lng: -77.171837}
         var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
         var marker = new google.maps.Marker({position: uluru, map: map});
+        var marker = new google.maps.Marker({position: secor, map: map});
       }
     </script>
 
