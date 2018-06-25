@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet'>
 <style>
 /* Create two equal columns that floats next to each other */
 body{
   margin:0;
   margin-top:0;
   padding: 0;
+  font-family: 'Josefin Sans';
 }
 
 .search {
   background: #ff9365;
   height:100vh;
   float: left;
-  width: 25%;
+  width: 20%;
 }
 
 .map{
   margin-top:0;
   height: 100vh;
   float: right;
-  width: 75%;
+  width: 80%;
 }
-h1{
-  color: white; font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+.title{
+  color: white;
   text-align: center;
+  font-size: 50px;
+}
+#map {
+  height: 100vh;
+  width: 100%;  /* The width is the width of the web page */
 }
 </style>
 </head>
 <body style="margin-top:0;">
 <div class="search">
   <div class="inputs">
-    <h1>Enter Address</h1>
+    <p class="title">Enter Addresses</p>
   </div>
 </div>
 <div class="map" >
-  <h2>Column 2</h2>
-  <p>Some text..</p>
+  <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 39.018304, lng: -77.011656};
+        var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
+        var marker = new google.maps.Marker({position: uluru, map: map});
+      }
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUkZc2-CfnPUVCYPBCZuqYSIhfwDtr7wk&callback=initMap">
+    </script>
 </div>
 </body>
 </html>
