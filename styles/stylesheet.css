@@ -7,22 +7,62 @@ body{
 }
 
 .search {
-  background: #ff9365;
+  background: #ff6363;
   height:100vh;
   float: left;
-  width: 25%;
+  width: 20%;
 }
 
+.ex1 {
+  margin: 0 auto;
+  text-align: left;
+  width: 18vw;
+  height: 55vh;
+  overflow: scroll;
+  font-size: 3vh;
+}
+.button{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  font-size: 2.5vh;
+  color:white;
+}
 .map{
   margin-top:0;
   height: 100vh;
   float: right;
-  width: 75%;
+  width: 80%;
 }
-.title{
+.regInput{
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 2vh;
+  font-size: 3vh;
+  padding:0 10px;
+  height: 4vh;
+  width: 16vw;
+  border:none;
+  outline:none;
+}
+h1{
+  padding-top: 2vh;
   color: white;
   text-align: center;
-  font-size: 50px;
+  font-size: 4vw;
+}
+.inputs{
+  text-align: center;
+}
+
+.title{
+  padding-top: 1vh;
+  color: white;
+  text-align: center;
+  font-size: 2.5vw;
 }
 #map {
   height: 100vh;
