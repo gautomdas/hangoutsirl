@@ -13,6 +13,16 @@
     <h1>Centroid</h1>
     <img src="./logos/whiteLogo.png" style="height:6vw;"></img>
     <p class="title">Enter Address: </p>
+    <div id="root">hello</div>
+    <script>
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+
+    ReactDOM.render(
+      <h1>Hello, world!</h1>,
+      document.getElementById('root')
+    );
+    </script>
     <input id="myInput" type="text" class="regInput"></input>
     <button id="myBtn" class="button" type="button" onclick="addLoc()">Enter</button>
     <script>
