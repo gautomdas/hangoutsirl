@@ -23,41 +23,9 @@
 </div>
 <div class="map" >
   <div id="map"></div>
-    <script>
-      function initMap() {
-        var listAddress = [{lat: 39.018304, lng: -77.011656}, {lat: 39.055340, lng: -77.171837}];
-        var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: listAddress[0]});
-        text = "<ul>";
-        for(i=0; i<listAddress.length;i++){
-          var marker = new google.maps.Marker({position: listAddress[i], map: map});
-          text += "<li>" + listAddress[i] + "</li>";
-        }
-        text += "</ul>";
-        document.getElementById("demo").innerHTML = text;
-
-        var drawingManager = new google.maps.drawing.DrawingManager({
-          drawingMode: google.maps.drawing.OverlayType.MARKER,
-          drawingControl: true,
-          drawingControlOptions: {
-            position: google.maps.ControlPosition.TOP_CENTER,
-            drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-          },
-          markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
-          circleOptions: {
-            fillColor: '#ffff00',
-            fillOpacity: 1,
-            strokeWeight: 5,
-            clickable: false,
-            editable: true,
-            zIndex: 1
-          }
-        });
-        drawingManager.setMap(map);
-      }
-    </script>
-
+    <script src="./scripts/map.js"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUkZc2-CfnPUVCYPBCZuqYSIhfwDtr7wk&callback=initMap&libraries=drawing">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUkZc2-CfnPUVCYPBCZuqYSIhfwDtr7wk&callback=initMap&libraries=drawing,places">
     </script>
 </div>
 </body>

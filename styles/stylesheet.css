@@ -24,6 +24,7 @@ body{
 }
 .button{
   background-color: Transparent;
+  margin-top: 5px;
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
@@ -41,7 +42,6 @@ body{
 .regInput{
   margin: 0 auto;
   text-align: left;
-  border-radius: 2vh;
   font-size: 3vh;
   padding:0 10px;
   height: 4vh;
